@@ -6,13 +6,71 @@
 </head>
 <body>
 
-<h1>Life Stats</h1>
+<div class="container">
 
-<input id="study" placeholder="Study hours">
-<input id="sleep" placeholder="Sleep hours">
-<button onclick="addEntry()">Add</button>
+  <h1>🚀 Life Dashboard</h1>
 
-<ul id="list"></ul>
+  <div class="grid">
+
+    <div class="card input-card">
+      <h2>Add Entry</h2>
+      <input id="study" type="number" placeholder="📚 Study Hours">
+      <input id="sleep" type="number" placeholder="😴 Sleep Hours">
+      <button onclick="addEntry()">Add Entry</button>
+    </div>
+
+    <div class="card stats-card">
+      <h2>Stats</h2>
+      <p id="total">Total Entries: 0</p>
+      <p id="avg">Avg Study: 0h</p>
+    </div>
+
+  </div>
+
+  <div class="card list-card">
+    <h2>Entries</h2>
+    <ul id="list"></ul>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+  <title>Life Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+
+  <h1>🚀 Life Dashboard</h1>
+
+  <div class="grid">
+
+    <div class="card input-card">
+      <h2>Add Entry</h2>
+      <input id="study" type="number" placeholder="📚 Study Hours">
+      <input id="sleep" type="number" placeholder="😴 Sleep Hours">
+      <button onclick="addEntry()">Add Entry</button>
+    </div>
+
+    <div class="card stats-card">
+      <h2>Stats</h2>
+      <p id="total">Total Entries: 0</p>
+      <p id="avg">Avg Study: 0h</p>
+    </div>
+
+  </div>
+
+  <div class="card list-card">
+    <h2>Entries</h2>
+    <ul id="list"></ul>
+  </div>
+
+</div>
 
 <script src="app.js"></script>
 </body>
