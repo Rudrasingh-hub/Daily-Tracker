@@ -75,3 +75,78 @@
 <script src="app.js"></script>
 </body>
 </html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Life Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+
+  <h1>✨ Life Dashboard</h1>
+
+  <!-- INPUT SECTION -->
+  <div class="card">
+    <h2>Add Your Day</h2>
+
+    <input id="study" type="number" placeholder="📚 Study Hours">
+    <input id="sleep" type="number" placeholder="😴 Sleep Hours">
+
+    <button onclick="addEntry()">➕ Add Entry</button>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="box">
+      <p>Total Entries</p>
+      <h2 id="total">0</h2>
+    </div>
+
+    <div class="box">
+      <p>Avg Study</p>
+      <h2 id="avg">0h</h2>
+    </div>
+  </div>
+
+  <!-- LIST -->
+  <div class="card">
+    <h2>📋 Your Entries</h2>
+    <ul id="list"></ul>
+  </div>
+
+</div>
+
+<script>
+let count = 0;
+let totalStudy = 0;
+
+function addEntry() {
+  const study = Number(document.getElementById("study").value);
+  const sleep = Number(document.getElementById("sleep").value);
+
+  if (!study || !sleep) {
+    alert("Enter valid values!");
+    return;
+  }
+
+  const li = document.createElement("li");
+  li.innerHTML = `📚 ${study}h | 😴 ${sleep}h`;
+
+  document.getElementById("list").appendChild(li);
+
+  count++;
+  totalStudy += study;
+
+  document.getElementById("total").innerText = count;
+  document.getElementById("avg").innerText =
+    (totalStudy / count).toFixed(1) + "h";
+
+  document.getElementById("study").value = "";
+  document.getElementById("sleep").value = "";
+}
+</script>
+
+</body>
+</html>
